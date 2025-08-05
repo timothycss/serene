@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pendulum Spaces - Real Estate in Ghana</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #ffffff;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+    
+    .hero-logo {
+      position: absolute;
+      top: -60px;
+      right: 40px;
+      width: 220px;      /* Increased from 80px */
+      height: auto;
+      z-index: 20;
+      border-radius: 12px;
+      padding: 6px 10px;
+    }
+    @media (max-width: 700px) {
+      .hero-logo {
+        top: 16px;
+        right: 16px;
+        width: 70px;     /* Increased from 50px */
+        padding: 4px 6px;
+      }
+    }
+    .buy-btn {
+      margin-top: 0px;
+      max-width: 100px;
+      width: 100px;
+      display: inline-block;
+      padding: 8px 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-align: left;
+      background-color: #04002b;
+      margin-left: 40px;
+      letter-spacing: 0.5px;
+      border: 2.5px solid;
+      text-decoration: none;
+      line-height: 1.1;
+      height: auto;
+      vertical-align: middle;
+      transition: color 0.3s;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .buy-btn::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 0;
+      background: #cf7c00; /* Changed from #8d8d8d or #000 */
+      z-index: -1;
+      transition: height 0.35s cubic-bezier(.4,0,.2,1);
+    }
+    .buy-btn:hover,
+    .buy-btn:focus {
+      color: #fff;
+    }
+    .buy-btn:hover::before,
+    .buy-btn:focus::before {
+      height: 100%;
+    }
+
+    /* Navigation Styles */
+    .main-nav {
+      background: rgb(255, 255, 255);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 0;
+      height: 75px;
+      position: fixed;
+      border: 0px solid rgba(0, 0, 0, 0.1);
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.452);
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      height: 64px;
+    }
+
+   .nav-logo {
+      width: 210px;
+      margin-top: 35px;
+      height: auto;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #090d40;
+      text-decoration: none;
+      font-weight: 400;
+      position: relative;
+      padding: 6px 0;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #04002b;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: 0;
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1100;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #04002b;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 900px) {
+      .nav-content {
+        position: relative;
+        flex-direction: row;
+        height: 54px;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100vw;
+        background: rgba(255,255,255,0.98);
+        padding: 20px 0;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        z-index: 100;
+        gap: 0;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+        display: block;
+        padding: 16px 0;
+        font-size: 1.1rem;
+        width: 100%;
+      }
+      .nav-content .buy-btn {
+        display: none !important;
+      }
+    }
+    @media (min-width: 901px) {
+      .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        width: auto;
+      }
+    }
+    .hero-image-banner {
+  margin-bottom: 80px !important; /* Add more space below the banner */
+}
+
+@media (max-width: 700px) {
+  .hero-image-banner {
+    margin-bottom: 28px !important;
+  }
+}
+.hero-image-banner2 {
+  margin-bottom: 0 !important;
+}
+
+.main-footer {
+  margin-top: 0 !important;
+}
+    /* Hamburger animation */
+    .menu-toggle.active div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .property-card {
+  background: #fff;
+  border-radius: 0px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.205);
+  width: 650px;                /* Increased from 520px */
+  min-width: 400px;            /* Increased from 320px */
+  max-width: 98vw;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 24px;
+}
+/* Add or update this CSS in your <style> section */
+.hero-image-banner2 .buy-btn {
+  display: block !important;
+  margin: 32px auto 0 auto !important;
+  max-width: 200px;
+  width: 90%;
+  border: none;
+  padding: 18px 0;
+  font-size: 1.25rem;
+  text-align: center;
+  background: #04002b;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+.hero-image-banner2 .buy-btn:hover {
+  background: #cf7c00;
+  color: #000000;
+}
+.main-footer {
+  background: #040029;
+  width: 100vw;           /* Make footer span full viewport width */
+  min-width: 100vw;
+  left: 0;
+  right: 0;
+  color: #fff;
+  padding: 48px 0 0 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 60px;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  position: relative;
+  box-sizing: border-box;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1600px;
+  margin: 0 auto;
+  gap: 0;
+  justify-content: space-between;
+  padding: 0 32px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.footer-divider {
+  width: 2px;
+  background: #fff2;
+  margin: 0 24px;
+  min-height: 180px;
+  align-self: stretch;
+  display: block;
+}
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .footer-col {
+    min-width: 0;
+    width: 100%;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .footer-divider {
+    display: none;
+  }
+  .footer-social {
+    justify-content: center !important;
+  }
+}
+@media (max-width: 600px) {
+  .main-footer {
+    padding: 32px 0 0 0;
+  }
+  .footer-container {
+    padding: 0 2vw;
+  }
+  .footer-col {
+    margin-bottom: 18px;
+  }
+  .footer-bottom {
+    font-size: 0.95em;
+    padding: 12px 0 8px 0;
+  }
+}
+@media (max-width: 900px) {
+  .footer-bottom {
+    padding: 6px 0 4px 0 !important;
+    margin-top: -18px !important;
+  }
+}
+@media (max-width: 600px) {
+  .footer-bottom {
+    padding: 4px 0 2px 0 !important;
+    margin-top: -24px !important;
+  }
+
+  /* Responsive Only Enhancements for Welcome Home Section */
+@media (max-width: 1100px) {
+  .hero-image-banner + section > div {
+    flex-direction: column;
+    gap: 32px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 4vw !important;
+  }
+  .hero-image-banner + section > div > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+  .hero-image-banner + section > div > div:last-child {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-image-banner + section {
+    padding: 32px 0 !important;
+  }
+  .hero-image-banner + section > div {
+    gap: 18px !important;
+    padding: 0 2vw !important;
+  }
+  .hero-image-banner + section h1 {
+    font-size: 1.3em !important;
+    text-align: center !important;
+  }
+  .hero-image-banner + section p {
+    font-size: 1em !important;
+    text-align: center !important;
+  }
+  .hero-image-banner + section img {
+    max-width: 98vw !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+}
+}
+.footer-bottom {
+  text-align: center;
+  padding: 18px 0 10px 0;
+  font-size: 1rem;
+  color: #fff;
+  background: #090031;
+  width: 100vw; 
+  height: 10vw;          /* Ensure the bottom bar also spans full width */
+  min-width: 100vw;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+.footer-col {
+  flex: 1 1 260px;
+  min-width: 220px;
+  margin-bottom: 32px;
+}
+.footer-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+.footer-col p, .footer-col ul, .footer-col form {
+  font-size: 1rem;
+  color: #f3f3f3;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover {
+  color: #cf7c00;
+}
+.subscribe-form {
+  display: flex;
+  margin-bottom: 18px;
+  gap: 0;
+}
+.subscribe-form input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  font-size: 1rem;
+  outline: none;
+}
+.subscribe-form button {
+  background: #cf7c00;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 0 3px 3px 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 1rem;
+}
+.subscribe-form button:hover {
+  background: #cf7c00;
+  color: #222;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 18px 0 10px 0;
+  font-size: 1rem;
+  color: #fff;
+  background: #040029;
+}
+.footer-bottom hr {
+  border: none;
+  border-top: 1px solid #fff2;
+  margin-bottom: 12px;
+}
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 12px;
+  }
+  .footer-col {
+    margin-bottom: 24px;
+  }
+}
+
+.explore-more-btn {
+  background: #cf7c00;
+  color: #fff;
+  padding: 14px 38px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1.1em;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  display: inline-block;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.explore-more-btn::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 0;
+  background: #000;
+  z-index: -1;
+  transition: height 0.35s cubic-bezier(.4,0,.2,1);
+}
+.explore-more-btn:hover,
+.explore-more-btn:focus {
+  color: #fff;
+}
+.explore-more-btn:hover::before,
+.explore-more-btn:focus::before {
+  height: 100%;
+}
+@media (max-width: 600px) {
+  .explore-more-btn {
+    width: 90vw;
+    padding: 14px 0;
+    font-size: 1em;
+  }
+}
+
+/* Smooth scroll for anchor links */
+  </style>
+<script>
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
+    if(target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+  <link rel="stylesheet" href="./Pendulum Spaces - Real Estate in Ghana r_files/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <div class="menu-toggle" id="menuToggle"> 
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+    <div class="nav-content">
+      <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\AURAQ Domicile.png" alt="Pendulum Spaces Logo" class="nav-logo">
+      <ul class="nav-links">
+        <li><a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana.html#sales"> <strong>Home</strong></a></li>
+        <li><a href=file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20ABOUT.html> <strong>About</strong></a></li>
+        <li><a href=file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20Explore%20our%20HOMES.html> <strong>Properties</strong></a></li>
+        <li><a href=file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20REVIEW.html> <strong>Reviews</strong></a></li>
+         <li><a href=file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20contact.html> <strong>Contact</strong></a></li>
+      </ul>
+      <a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20PURCHASE%20FORM.html" class="buy-btn" style="margin-top:10px; display:inline-block;">
+  BUY A HOUSE <span style="font-size:1.1em; margin-left:4px;">&#8594;</span>
+</a>
+    </div>
+  </nav>
+
+  <!-- Place this directly below your </nav> closing tag -->
+
+<div class="hero-image-banner" style="position:relative; width:100vw; max-width:100vw; overflow:hidden; margin-bottom:0;">
+  <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\edf75596-27a6-424a-9d2c-6028cc542e91.png"
+       alt="Buy A House Banner"
+       style="width:100vw; min-width:100vw; height:320px; object-fit:cover; display:block; filter:brightness(0.65);">
+  <div class="hero-banner-text"
+       style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; text-align:center; color:#fff;">
+    <h1 style="font-size:4em; font-weight:300; margin-bottom:12px; letter-spacing:1px;">Our Homes, Your true ABODE!.</h1>
+    <div style="font-size:1.25em; font-weight:600; color:#cf7c00; text-shadow:0 2px 8px #000;">
+    </div>
+  </div>
+</div>
+<!-- Add this section where you want the "Welcome to Our Homes" content to appear -->
+<section style="background:#fff; padding:60px 0;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:48px; flex-wrap:wrap;">
+    <!-- Left: Text Content -->
+    <div style="flex:1 1 380px; min-width:300px;">
+      <h1 style="font-size:2em; font-weight:500; color:#00092e; text-align: left; text-shadow: none; margin-bottom:18px; letter-spacing:1px;">
+        WELCOME TO <span style="color:#cf7c00;">OUR HOMES!</span>
+      </h1>
+      <div style="width:80px; height:4px; background:#222; margin-bottom:28px;"></div>
+      <p style="color:#444; font-size:1.13em; line-height:1.7; margin-bottom:18px;">
+        Where comfort meets elegance. Experience the joys of modern living in our spacious, stylish homes. With top-notch amenities, sleek designs, breathtaking views, and a well-planned community, every corner of our homes whispers, ‘Welcome’.
+      </p>
+      <p style="color:#444; font-size:1.13em; line-height:1.7; margin-bottom:36px;">
+        Where you live is more than just an address, it’s a sanctuary. Therefore, make it your haven today.
+      </p>
+      <div style="display:flex; gap:18px; flex-wrap:wrap;">
+        <a href="#" class="brochure-btn" style="background:#00092e; color:#fff; padding:14px 38px; border-radius:24px; font-weight:700; font-size:1.05em; text-decoration:none; display:inline-flex; align-items:center; gap:8px; position:relative; overflow:hidden;">
+  <i class="fa fa-download" aria-hidden="true"></i> Our Brochure
+</a>
+        <a href="#" style="border:2px solid #00092e; color:#00092e; padding:14px 38px; border-radius:24px; font-weight:700; font-size:1.05em; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+          <i class="fa fa-download" aria-hidden="true"></i> House Application Form
+        </a>
+      </div>
+    </div>
+    <!-- Right: Image -->
+    <div style="flex:1 1 340px; min-width:260px; text-align:right;">
+      <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\iStock-1081824440-1.jpg" alt="Modern Living Room" style="width:100%; max-width:600px; height: 30vw; object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+
+<!-- Place this directly below the about-section -->
+<section class="property-showcase" style="padding: 48px 0; background: #fff;"> 
+  <span style="display:inline-block; width:32px; height:2px; background:#cf7c00; margin-right:12px;"></span>
+  <span style="writing-mode: horizontal-tb; text-orientation: mixed; color:#bdbdbd; letter-spacing:4px; font-size:0.75em; font-weight:600; margin-right:8px;">PROPERTIES FOR SALE</span>
+
+<h2 style="color:#01004b; font-size:3.5em; text-shadow: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:300; text-align: left; margin-bottom:0; margin-left:12px;">
+  Let's Find Your  <br>New Home 
+</h2>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:32px; max-width:1400px; margin:0 auto;">
+    <!-- Property Card 1 -->
+   <div class="property-card" style="background:#fff; border-radius:0px; box-shadow:0 2px 12px rgba(0,0,0,0.08); width:340px; overflow:hidden; position:relative;">
+      <div class="property-slider">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\Top-10-property-dealers-in-Mohali.jpg" alt="2 Bedroom House Alt 2" class="property-img">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\2019567290_1_1_241016_053023-w1600-h1066.jpg" alt="2 Bedroom House" class="property-img active">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\edf75596-27a6-424a-9d2c-6028cc542e91.png" alt="2 Bedroom House Alt" class="property-img">
+        <button class="slider-arrow left">←</button>
+        <button class="slider-arrow right">→</button>
+      </div>
+      <div style="padding:20px;">
+        <h3 style="color:#cf7c00; font-size:1.15em; margin-bottom:8px;">2 Bedroom House (Detached + Expandable)</h3>
+        <div style="color:#222; font-weight:600; margin-bottom:8px;">$175,000</div>
+        <div style="font-size:0.98em; color:#444; margin-bottom:10px;">
+          <span>2 beds</span> &nbsp;|&nbsp; <span>2 baths</span> &nbsp;|&nbsp; <span>138 m²</span>
+        </div>
+        <div style="font-size:0.93em; color:#888;">Detached • Expandable • Two Bedroom • Adom Gate Pearls</div>
+        <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20PURCHASE%20FORM.html" class="buy-btn">BUY A HOUSE <span style="font-size:1.1em; margin-left:4px;">→</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- Property Card 2 -->
+    <div class="property-card" style="background:#fff; border-radius:0px; box-shadow:0 2px 12px rgba(0,0,0,0.08); width:340px; overflow:hidden; position:relative;">
+      <div class="property-slider">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\2019567290_1_1_241016_053023-w1600-h1066.jpg" alt="2 Bedroom House" class="property-img active">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\edf75596-27a6-424a-9d2c-6028cc542e91.png" alt="2 Bedroom House Alt" class="property-img">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\Top-10-property-dealers-in-Mohali.jpg" alt="2 Bedroom House Alt 2" class="property-img">
+        <button class="slider-arrow left">←</button>
+        <button class="slider-arrow right">→</button>
+      </div>
+      <div style="padding:20px;">
+        <h3 style="color:#cf7c00; font-size:1.15em; margin-bottom:8px;">3 Bedroom Detached + Bedsitter + Utility Room</h3>
+        <div style="color:#222; font-weight:600; margin-bottom:8px;">$206,500</div>
+        <div style="font-size:0.98em; color:#444; margin-bottom:10px;">
+          <span>4 beds</span> &nbsp;|&nbsp; <span>4 baths</span> &nbsp;|&nbsp; <span>199 m²</span>
+        </div>
+        <div style="font-size:0.93em; color:#888;">Detached • Three Bedroom • Adom Gate Pearls</div>
+        <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20PURCHASE%20FORM.html" class="buy-btn">BUY A HOUSE <span style="font-size:1.1em; margin-left:4px;">→</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- Property Card 3 -->
+    <div class="property-card" style="background:#fff; border-radius:px; box-shadow:0 2px 12px rgba(0,0,0,0.08); width:340px; overflow:hidden; position:relative;">
+      <div class="property-slider">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\2-385x258.jpg" alt="2 Bedroom House" class="property-img active">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\edf75596-27a6-424a-9d2c-6028cc542e91.png" alt="2 Bedroom House Alt" class="property-img">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\Top-10-property-dealers-in-Mohali.jpg" alt="2 Bedroom House Alt 2" class="property-img">
+        <button class="slider-arrow left">←</button>
+        <button class="slider-arrow right">→</button>
+      </div>
+      <div style="padding:20px;">
+        <h3 style="color:#cf7c00; font-size:1.15em; margin-bottom:8px;">2 Bedroom House (Semi-Detached)</h3>
+        <div style="color:#222; font-weight:600; margin-bottom:8px;">$135,000</div>
+        <div style="font-size:0.98em; color:#444; margin-bottom:10px">
+          <span>2 beds</span> &nbsp;|&nbsp; <span>2 baths</span> &nbsp;|&nbsp; <span>110 m²</span>
+        </div>
+        <div style="font-size:0.93em; color:#888;">Semi-Detached • Two Bedroom • Adom Gate Pearls</div>
+        <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20PURCHASE%20FORM.html" class="buy-btn">BUY A HOUSE <span style="font-size:1.1em; margin-left:4px;">→</span></a>
+        </div>
+      </div>
+    </div>
+     <!-- Property Card 1 -->
+    <div class="property-card" style="background:#fff; border-radius:0px; box-shadow:0 2px 12px rgba(0,0,0,0.08); width:340px; overflow:hidden; position:relative;">
+      <div class="property-slider">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\2019567290_1_1_241016_053023-w1600-h1066.jpg" alt="2 Bedroom House" class="property-img active">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\edf75596-27a6-424a-9d2c-6028cc542e91.png" alt="2 Bedroom House Alt" class="property-img">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\Top-10-property-dealers-in-Mohali.jpg" alt="2 Bedroom House Alt 2" class="property-img">
+        <button class="slider-arrow left">←</button>
+        <button class="slider-arrow right">→</button>
+      </div>
+      <div style="padding:20px;">
+        <h3 style="color:#cf7c00; font-size:1.15em; margin-bottom:8px;">2 Bedroom House (Detached + Expandable)</h3>
+        <div style="color:#222; font-weight:600; margin-bottom:8px;">$175,000</div>
+        <div style="font-size:0.98em; color:#444; margin-bottom:10px;">
+          <span>2 beds</span> &nbsp;|&nbsp; <span>2 baths</span> &nbsp;|&nbsp; <span>138 m²</span>
+        </div>
+        <div style="font-size:0.93em; color:#888;">Detached • Expandable • Two Bedroom • Adom Gate Pearls</div>
+        <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20PURCHASE%20FORM.html" class="buy-btn">BUY A HOUSE <span style="font-size:1.1em; margin-left:4px;">→</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- Property Card 2 -->
+    <div class="property-card" style="background:#fff; border-radius:0px; box-shadow:0 2px 12px rgba(0,0,0,0.08); width:340px; overflow:hidden; position:relative;">
+      <div class="property-slider">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\2019567290_1_1_241016_053023-w1600-h1066.jpg" alt="2 Bedroom House" class="property-img active">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\edf75596-27a6-424a-9d2c-6028cc542e91.png" alt="2 Bedroom House Alt" class="property-img">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\Top-10-property-dealers-in-Mohali.jpg" alt="2 Bedroom House Alt 2" class="property-img">
+        <button class="slider-arrow left">←</button>
+        <button class="slider-arrow right">→</button>
+      </div>
+      <div style="padding:20px;">
+        <h3 style="color:#cf7c00; font-size:1.15em; margin-bottom:8px;">3 Bedroom Detached + Bedsitter + Utility Room</h3>
+        <div style="color:#222; font-weight:600; margin-bottom:8px;">$206,500</div>
+        <div style="font-size:0.98em; color:#444; margin-bottom:10px;">
+          <span>4 beds</span> &nbsp;|&nbsp; <span>4 baths</span> &nbsp;|&nbsp; <span>199 m²</span>
+        </div>
+        <div style="font-size:0.93em; color:#888;">Detached • Three Bedroom • Adom Gate Pearls</div>
+        <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20PURCHASE%20FORM.html" class="buy-btn">BUY A HOUSE <span style="font-size:1.1em; margin-left:4px;">→</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- Property Card 3 -->
+    <div class="property-card" style="background:#fff; border-radius:px; box-shadow:0 2px 12px rgba(0,0,0,0.08); width:340px; overflow:hidden; position:relative;">
+      <div class="property-slider">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\2019567290_1_1_241016_053023-w1600-h1066.jpg" alt="2 Bedroom House" class="property-img active">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\edf75596-27a6-424a-9d2c-6028cc542e91.png" alt="2 Bedroom House Alt" class="property-img">
+        <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\Top-10-property-dealers-in-Mohali.jpg" alt="2 Bedroom House Alt 2" class="property-img">
+        <button class="slider-arrow left">←</button>
+        <button class="slider-arrow right">→</button>
+      </div>
+      <div style="padding:20px;">
+        <h3 style="color:#cf7c00; font-size:1.15em; margin-bottom:8px;">2 Bedroom House (Semi-Detached)</h3>
+        <div style="color:#222; font-weight:600; margin-bottom:8px;">$135,000</div>
+        <div style="font-size:0.98em; color:#444; margin-bottom:10px">
+          <span>2 beds</span> &nbsp;|&nbsp; <span>2 baths</span> &nbsp;|&nbsp; <span>110 m²</span>
+        </div>
+        <div style="font-size:0.93em; color:#888;">Semi-Detached • Two Bedroom • Adom Gate Pearls</div>
+        <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20PURCHASE%20FORM.html" class="buy-btn">BUY A HOUSE <span style="font-size:1.1em; margin-left:4px;">→</span></a>
+        </div>
+  </div>
+</section>
+
+<style>
+.property-slider {
+  position: relative;
+  width: 100%;
+  height: 310px; /* Increased from 200px */
+  overflow: hidden;
+}
+.property-img {
+  width: 100%;
+  height: 310px; /* Increased from 200px */
+  object-fit: cover;
+  position: absolute;
+  left: 0; top: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1;
+}
+.property-img.active {
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+}
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20,0,50,0.7);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.3em;
+  cursor: pointer;
+  z-index: 10;
+  outline: none;
+  transition: background 0.2s;
+}
+
+/* Hide arrows by default */
+.property-slider .slider-arrow {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+/* Show arrows on hover of the image area */
+.property-slider:hover .slider-arrow,
+.property-slider:focus-within .slider-arrow {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slider-arrow.left { left: 10px; }
+.slider-arrow.right { right: 10px; }
+.slider-arrow:hover { background: #cf7c00; }
+</style>
+<script>
+document.querySelectorAll('.property-slider').forEach(function(slider) {
+  const images = slider.querySelectorAll('.property-img');
+  let current = 0;
+  function show(idx) {
+    images.forEach((img, i) => img.classList.toggle('active', i === idx));
+  }
+  slider.querySelector('.slider-arrow.left').onclick = function() {
+    current = (current - 1 + images.length) % images.length;
+    show(current);
+  };
+  slider.querySelector('.slider-arrow.right').onclick = function() {
+    current = (current + 1) % images.length;
+    show(current);
+  };
+});
+</script>
+
+<div class="hero-image-banner2" style="position:relative; width:100vw; max-width:100vw; overflow:hidden; margin-bottom:0;">
+  <img src="C:\Users\SSIRTIMO\Desktop\pendulum-spaces\IMG_300.jpg"
+       alt="Buy A House Banner"
+       style="width:100vw; min-width:100vw; height:320px; object-fit:cover; display:block; filter:brightness(0.65);">
+  <div class="hero-banner-text"
+       style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; text-align:center; color:#fff;">
+    <h1 style="font-size:3.2em; font-weight:800; margin-bottom:12px; letter-spacing:1px;">Buy A House</h1>
+    <div style="font-size:1.25em; font-weight:600; color:#ffffff; text-shadow:0 2px 8px #000;">
+      Own a property at Ghana's Favourite Estates
+    </div>
+    <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+          <a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20PURCHASE%20FORM.html" class="buy-btn">BUY A HOUSE <span style="font-size:1.1em; margin-left:4px;">→</span></a>
+        </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-col about-col">
+      <h3>Auraq Serene Domicile</h3>
+      <p>
+        A top real estate company in Ghana. We help you find your ideal home or investment property with expert guidance and personalized service. Discover a new standard in real estate—where your needs come first and your satisfaction is our mission.
+      </p>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-col links-col">
+      <h3>Useful Links</h3> 
+     <ul>
+        <li><a href="file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana.html#sales">Home <span style="margin-left:6px;">&#8594;</span></a></li>
+        <li><a href=file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20ABOUT.html>About Us <span style="margin-left:6px;">&#8594;</span></a></li>
+        <li><a href=file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20Explore%20our%20HOMES.html>Properties <span style="margin-left:6px;">&#8594;</span></a></li>
+        <li><a href=file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20REVIEW.html>Reviews <span style="margin-left:6px;">&#8594;</span></a></li>
+        <li><a href=file:///C:/Users/SSIRTIMO/Desktop/pendulum-spaces/Pendulum%20Spaces%20-%20Real%20Estate%20in%20Ghana%20contact.html>Contact <span style="margin-left:6px;">&#8594;</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-col subscribe-col">
+      <h3>Subscribe</h3>
+      <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+        <input type="email" placeholder="Your Email Address" required="">
+        <button type="submit">SUBSCRIBE <span style="font-size:1.2em;">→</span></button>
+      </form>
+      <!-- Social Media Handles Below Subscribe Button -->
+      <div class="footer-social" style="margin-top:16px; display:flex; gap:18px; align-items:center;">
+        <a href="https://facebook.com/pendulumspaces" target="_blank" aria-label="Facebook" style="color:#fff; font-size:1.4em;">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/pendulumspacesgh" target="_blank" aria-label="Instagram" style="color:#fff; font-size:1.4em;">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/233501234567" target="_blank" aria-label="WhatsApp" style="color:#fff; font-size:1.4em;">
+          <i class="fab fa-whatsapp"></i> 
+        </a>
+        <a href="https://www.tiktok.com/@pendulumspaces" target="_blank" aria-label="TikTok" style="color:#fff; font-size:1.4em;">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <hr>
+    <p>© 2025 <strong>Auraq Serene Domicile</strong>. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Add this script before </body> -->
+<!-- filepath: c:\Users\SSIRTIMO\Desktop\pendulum-spaces\Pendulum Spaces - Real Estate in Ghana.html -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelector('.nav-links');
+  menuToggle.addEventListener('click', function() {
+    navLinks.classList.toggle('show');
+    menuToggle.classList.toggle('active');
+  });
+  // Hide menu on link click (mobile)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      menuToggle.classList.remove('active');
+    });
+  });
+  // Optional: Hide navLinks if window is resized to desktop
+  window.addEventListener('resize', () => {
+    if(window.innerWidth > 900) {
+      navLinks.classList.remove('show');
+      menuToggle.classList.remove('active');
+    }
+  });
+</script>
+<!-- filepath: c:\Users\SSIRTIMO\Desktop\pendulum-spaces\Pendulum Spaces - Real Estate in Ghana.html -->
+<script>
+  // Hero content slider animation
+  const heroContents = document.querySelectorAll('.hero-content');
+  let currentHero = 0;
+  function showHeroContent(index) {
+    heroContents.forEach((el, i) => {
+      el.classList.toggle('active', i === index);
+    });
+  }
+  function nextHeroContent() {
+    currentHero = (currentHero + 1) % heroContents.length;
+    showHeroContent(currentHero);
+  }
+  // Initialize
+  showHeroContent(0);
+  setInterval(nextHeroContent, 7000); // Change every 7 seconds (was 4 seconds)
+</script>
+
+<!-- Add this to your <style> section or just above your form -->
+<style>
+  form label {
+    color: #222 !important;
+    font-weight: 600;
+  }
+</style>
+<!-- Add this to your <style> section for a functional and responsive top-bottom #cf7c00 hover effect -->
+<style>
+.brochure-btn {
+  background: #00092e;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s;
+  overflow: hidden;
+}
+.brochure-btn::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 0;
+  background: linear-gradient(to bottom, #cf7c00 0%, #cf7c00 100%);
+  z-index: -1;
+  transition: height 0.35s cubic-bezier(.4,0,.2,1);
+}
+.brochure-btn:hover,
+.brochure-btn:focus {
+  color: #fff;
+}
+.brochure-btn:hover::before,
+.brochure-btn:focus::before {
+  height: 100%;
+}
+@media (max-width: 600px) {
+  .brochure-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 1em;
+  }
+}
+</style>
+<!-- Replace your current map container with this for full width map display -->
+<div style="width:100vw; padding:0; box-sizing:border-box; background:#01004b;">
+  <div style="width:100vw; height:700px; margin:0; border-radius:0; overflow:hidden; box-shadow: none;">
+    <iframe
+      src="https://www.google.com/maps?q=Accra,+Ghana&output=embed"
+      width="100%"
+      height="100%"
+      style="border:0; display:block;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Auraq Serene Domicile Location"
+    ></iframe>
+  </div>
+</div>
+
+</div></section></body></html>
